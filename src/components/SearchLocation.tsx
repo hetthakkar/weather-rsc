@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
+import { Button } from './ui/button'
 
 export default function SearchLocation() {
   const [location, setLocation] = useState('')
@@ -23,7 +24,7 @@ export default function SearchLocation() {
 
   return (
     <div className='flex min-h-screen flex-col items-start pt-12 gap-4'>
-      <h1 className='text-xl font-bold text-center'>
+      <h1 className='md:text-xl font-bold md:text-center'>
         Enter city name to view weather
       </h1>
 
@@ -35,18 +36,15 @@ export default function SearchLocation() {
         }}
       >
         <input
-          className='border-2 border-gray-200 rounded-md bg-black text-white'
+          className='border-2 border-gray-200 rounded-md bg-background text-foreground'
           ref={inputRef}
           type='text'
           value={location}
           onChange={(e) => setLocation(e.target.value)}
         />
-        <Link
-          className='bg-black p-2 text-white border-2 border-white rounded-lg w-24 text-center'
-          href={`/location/${location}`}
-        >
-          Go!
-        </Link>
+        <Button>
+          <Link href={`/location/${location}`}>GO!</Link>
+        </Button>
       </form>
     </div>
   )

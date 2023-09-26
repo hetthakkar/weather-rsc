@@ -20,16 +20,33 @@ export default async function Place({ params }: { params: { place: string } }) {
   }
 
   return (
-    <div>
-      <h1 className='text-4xl font-bold text-center'>
-        {location.name}, {location.country}
-      </h1>
-      <div className='mt-4'>
-        <h2>Current forecast</h2>
-        <p>Temperature: {current.temp_c} C</p>
-        <p className='text-sm text-gray-200'>
-          Feels like: {current.feelslike_c} C
-        </p>
+    <div className='flex flex-col items-start w-full'>
+      <div className='flex flex-col md:flex-row justify-between items-start w-full'>
+        <div className='flex items-center justify-start'>
+          <img src={current.condition.icon} alt={current.condition.text} />
+          <h1 className='text-2xl md:text-4xl font-bold md:text-center'>
+            {location.name}, {location.country}
+          </h1>
+        </div>
+        <div className='hidden flex-col justify-end'>
+          <p>{location.localtime}</p>
+        </div>
+      </div>
+      <hr className='my-4 w-[100%]  md:max-w-[800px]' />
+      <div className=''>
+        {/* Degree symbol */}
+
+        <p className='text-lg'>Temperature: {current.temp_c}&deg; C</p>
+        <p className='text-sm'>Feels like: {current.feelslike_c}&deg; C</p>
+
+        <p className='text-lg mt-4'>Wind: {current.wind_kph} km/h</p>
+        <p className='text-sm'>Direction: {current.wind_dir}</p>
+
+        <p className='text-lg mt-4'>Humidity: {current.humidity}%</p>
+        <p className='text-sm'>Cloud: {current.cloud}%</p>
+
+        <p className='text-lg mt-4'>Precipitation: {current.precip_mm} mm</p>
+        <p className='text-sm'>Pressure: {current.pressure_mb} mb</p>
       </div>
     </div>
   )
