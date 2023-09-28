@@ -1,7 +1,6 @@
 import { getWeather } from "@/lib/getWeather";
 import { Metadata } from "next";
 import Link from "next/link";
-
 type Props = {
   params: {
     place: string;
@@ -56,8 +55,6 @@ export default async function Place({ params }: { params: { place: string } }) {
       </div>
       <hr className="my-4 w-[100%]  md:max-w-[800px]" />
       <div className="">
-        {/* Degree symbol */}
-
         <p className="text-lg">Temperature: {current.temp_c}&deg; C</p>
         <p className="text-sm">Feels like: {current.feelslike_c}&deg; C</p>
 
