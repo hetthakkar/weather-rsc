@@ -23,7 +23,7 @@ export default function SearchLocation() {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col items-start gap-4 pt-12">
+    <div className="flex flex-col items-start gap-4 pt-12">
       <h1 className="font-bold md:text-center md:text-xl">
         Enter city name to view weather
       </h1>

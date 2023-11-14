@@ -1,3 +1,4 @@
+import SearchLocation from "@/components/SearchLocation";
 import { getWeather } from "@/lib/getWeather";
 import { Metadata } from "next";
 import Link from "next/link";
@@ -42,6 +43,9 @@ export default async function Place({ params }: { params: { place: string } }) {
 
   return (
     <div className="flex w-full flex-col items-start">
+      <div className="mb-10">
+        <SearchLocation />
+      </div>
       <div className="flex w-full flex-col items-start justify-between md:flex-row">
         <div className="flex items-center justify-start">
           <img src={current.condition.icon} alt={current.condition.text} />
