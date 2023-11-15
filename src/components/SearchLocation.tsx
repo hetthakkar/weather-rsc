@@ -36,7 +36,7 @@ export default function SearchLocation() {
         }}
       >
         <input
-          className="rounded-md border-2 border-gray-200 bg-background text-foreground"
+          className="w-40 rounded-md border-2 border-gray-200 bg-background text-foreground sm:w-auto"
           ref={inputRef}
           type="text"
           value={location}
